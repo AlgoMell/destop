@@ -1,0 +1,67 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<meta name="viewport" content="width=device-width,minimum-scale=1">
+		<title>Eir</title>
+        <link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+        <div class="chat-ai">
+        
+            
+            <a href="file:///C:/Users/cyphr/OneDrive/Desktop/stuff2/index.html#" class="open-sidebar" title="Open Sidebar"><i class="fa-solid fa-bars"></i></a>
+            <nav class="conversations">
+                <a class="new-conversation" href="file:///C:/Users/cyphr/OneDrive/Desktop/stuff2/index.html#"><i class="fa-solid fa-plus"></i>New Case</a>
+                <div class="list"></div>
+                <div class="footer">
+                    <a class="close-sidebar" href="file:///C:/Users/cyphr/OneDrive/Desktop/stuff2/index.html#" title="Close Sidebar"><i class="fa-solid fa-bars"></i></a>
+                </div>
+            </nav>
+        
+            <main class="content">               
+                
+            <div class="welcome">
+                <h1>Eir<span class="ver">beta</span></h1>                    
+                <a href="file:///C:/Users/cyphr/OneDrive/Desktop/stuff2/index.html#" class="open-database"><i class="fa-regular fa-folder-open"></i>Open Database...</a>
+            </div>
+        
+                <form class="message-form">
+                    <input type="text" id="textf" placeholder="Type a message..." required="">
+                    <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+                </form>
+            </main>
+        </div>
+        <script src="ChatAI.js"></script>
+        <script>
+        // Create a new ChatAI instance
+                new ChatAI({
+            container: '.chat-ai',
+            api_key: '',
+            model: ''
+        });
+        </script>
+        <script>const img = document.querySelector('.chat-ai .content .welcome .img');
+
+let rotationSpeed = 10; // Initial rotation speed in seconds
+let hoverTime = 0; // Variable to track hover time
+
+img.addEventListener('mouseover', () => {
+  img.classList.add('rotate'); // Add rotation class when hovering starts
+  rotateImage(); // Start rotating
+});
+
+img.addEventListener('mouseout', () => {
+  img.classList.remove('rotate'); // Remove rotation class when hovering ends
+  hoverTime = 0; // Reset hover time
+});
+function rotateImage() {
+  hoverTime += 0.1; // Increment hover time
+  img.style.animationDuration = `${rotationSpeed - hoverTime}s`; // Adjust rotation speed based on hover time
+  if (img.classList.contains('rotate')) {
+    requestAnimationFrame(rotateImage); // Continue rotating if still hovering
+  }
+}
+
+
+</script>
+	
+</body></html>
